@@ -23,19 +23,18 @@
 
   <!-- Script JavaScript embutido na página -->
   <script>
+
     // Seleciona o botão e a div pelo ID
     const button =document.querySelector('#myButton');
     const div =document.querySelector('#myDiv');
 
-
     // Adiciona um evento de clique ao botão
-    button.addEventListener('click' , () => {
-
+    button.addEventListener ('click', () => {
       // Verifica a cor atual da div e alterna entre lightblue e lightcoral
-      if (div.style.backgroudcolor === 'lightblue') {
-        div.style.backgroudcolor = 'lightblue' ;
-      } else{
-        div.style.backgroudcolor = 'lightblue';
+      if (div.style.backgroundColor === 'lightblue') {
+        div.style.backgroundColor = 'lightcoral';
+      } else {
+        div.style.backgroundColor = 'lightblue';
       }
     });
 
