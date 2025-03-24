@@ -48,9 +48,43 @@
 
   <!-- Script JavaScript embutido na página -->
   <script>
+// Seleciona os elementos do DOM
+const timerElement = document.getElementById("timer");
+  const startButton = document.getElementById("startButton");
+  const pauseButton = document.getElementById("pauseButton");
+  const resetButton = document.getElementById("resetButton");
 
+  let timer = 0; // Variável para armazenar o valor do temporizador
+  let intervalId = null; // Variável para armazenar o ID do intervalo
 
-    // 1ª Digitação (Resolva aqui o exercício)
+  // Função para atualizar o temporizador na tela
+  function updateTimer() {
+    timerElement.textContent = timer;
+  }
+
+  // Evento para iniciar o temporizador
+  startButton.addEventListener("click", () => {
+    if (intervalId === null) { // Evita múltiplos intervalos
+      intervalId = setInterval(() => {
+        timer++;
+        updateTimer();
+      }, 1000);
+    }
+  });
+
+  // Evento para pausar o temporizador
+  pauseButton.addEventListener("click", () => {
+    clearInterval(intervalId);
+    intervalId = null; // Reseta o ID do intervalo
+  });
+
+  // Evento para resetar o temporizador
+  resetButton.addEventListener("click", () => {
+    clearInterval(intervalId);
+    intervalId = null; // Reseta o ID do intervalo
+    timer = 0; // Reseta o valor do temporizador
+    updateTimer();
+  });
 
 
   </script>
